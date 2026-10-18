@@ -15,14 +15,14 @@ collection = client["ev_db"]["vehicles"]
 def insert_fast():
     fast = collection.with_options(write_concern=WriteConcern(w=1))
     result = fast.insert_one(request.json)
-    return jsonify({"inserted ID": str(result.inserted_id)})
+    return jsonify({"inserted_id": str(result.inserted_id)})
 
 
 @app.route("/insert-safe", methods=["POST"])
 def insert_safe():
     safe = collection.with_options(write_concern=WriteConcern(w="majority"))
     result = safe.insert_one(request.json)
-    return jsonify({"inserted ID": str(result.inserted_id)})
+    return jsonify({"inserted_id": str(result.inserted_id)})
 
 
 @app.route("/count-tesla-primary", methods=["GET"])
