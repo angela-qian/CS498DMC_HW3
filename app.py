@@ -5,7 +5,7 @@ from pymongo.read_preferences import ReadPreference
 
 app = Flask(__name__)
 
-MONGO_URI = "mongodb+srv://angela_qian:FubQkvn7f4C80S33@cs498-hw3-cluster.grqsm77.mongodb.net/"
+MONGO_URI = os.environ["MONGO_URI"]
 client = MongoClient(MONGO_URI)
 
 collection = client["ev_db"]["vehicles"]
