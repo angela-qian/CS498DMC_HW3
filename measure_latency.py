@@ -7,7 +7,7 @@ for endpoint in ["insert-fast", "insert-safe"]:
     for i in range(500):
         data = {
             "VIN (1-10)": f"TEST_{endpoint}_{i}",  # use unique identifier
-            "Make": "TESLA",
+            "Make": "TEST",
             "Model": "TEST",
             "City": "TEST",
             "Model Year": 2026
